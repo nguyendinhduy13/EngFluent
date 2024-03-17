@@ -1,10 +1,10 @@
 import {Colors} from '@assets/colors';
+import {SCREEN_WIDTH} from '@constants/index';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
   },
 
   dropDown: {
@@ -80,5 +80,68 @@ export default StyleSheet.create({
   iconFire: {
     width: 20,
     height: 20,
+  },
+
+  listTopic: {
+    flex: 1,
+    marginTop: 20,
+    marginHorizontal: 20,
+    height: 585,
+  },
+  wrapAllTopic: {
+    marginHorizontal: 20,
+    marginTop: 100,
+  },
+
+  wrapTopic: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  topicImage: {
+    width: 55,
+    height: 55,
+  },
+
+  wrapContentTopic: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  wrapDescription: {
+    marginLeft: 10,
+    width: SCREEN_WIDTH - 205,
+  },
+
+  topicTitle: {
+    color: Colors.black3,
+    fontSize: 16,
+    fontWeight: '700',
+  },
+
+  topicDescription: {
+    color: Colors.black2,
+    fontSize: 12,
+    fontWeight: '400',
+  },
+
+  wrapIcon: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.white,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    marginLeft: 10,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 1,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+
+  iconStyle: {
+    color: Colors.orange4,
   },
 });

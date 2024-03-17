@@ -2,7 +2,7 @@ import { Colors } from "@assets/colors";
 import { TOPIC } from "@assets/index";
 import IconView from "@components/IconView";
 import React, { useState } from "react";
-import { Image, Text, View } from "react-native";
+import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SelectDropdown from "react-native-select-dropdown";
 import styles from "./styles";
@@ -61,6 +61,43 @@ const Topic = () => {
                                                 }}
                                         />
                                 </View>
+                                <ScrollView showsVerticalScrollIndicator={false}>
+                                        <ImageBackground
+                                                source={TOPIC.LIST_TOPIC}
+                                                style={styles.listTopic}
+                                        >
+                                                <View style={styles.wrapAllTopic}>
+                                                        <TouchableOpacity
+                                                                style={styles.wrapTopic}
+                                                                activeOpacity={0.8}
+                                                        // onPress={goToTopicDetail}
+                                                        >
+                                                                <View style={styles.wrapContentTopic}>
+                                                                        <Image
+                                                                                source={TOPIC.TOPIC_IMAGE}
+                                                                                style={styles.topicImage}
+                                                                        />
+                                                                        <View style={styles.wrapDescription}>
+                                                                                <View>
+                                                                                        <Text style={styles.topicTitle}>Làm quen bạn mới</Text>
+                                                                                </View>
+                                                                                <Text style={styles.topicDescription}>
+                                                                                        Giới thiệu bản thân một cách đơn giản và hỏi thông tin về người khác
+                                                                                </Text>
+                                                                        </View>
+                                                                </View>
+                                                                <View style={styles.wrapIcon}>
+                                                                        <IconView
+                                                                                typeIcon="MaterialIcons"
+                                                                                name="arrow-forward-ios"
+                                                                                size={10}
+                                                                                style={styles.iconStyle}
+                                                                        />
+                                                                </View>
+                                                        </TouchableOpacity>
+                                                </View>
+                                        </ImageBackground>
+                                </ScrollView>
                         </SafeAreaView>
                 </View>
         )
