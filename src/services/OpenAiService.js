@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '@env';
+import {API_KEY, API_URL} from '@env';
 import axios from 'axios';
 
 export const getAnswerFromGpt = async prompts => {
@@ -38,8 +38,8 @@ export const getAnswerFromGpt = async prompts => {
     });
 
     const answer = response.data?.candidates[0]?.content?.parts?.[0]?.text;
-    return Promise.resolve({ success: true, data: answer });
+    return Promise.resolve({success: true, data: answer});
   } catch (error) {
-    return Promise.resolve({ success: false, msg: error.message });
+    return Promise.resolve({success: false, msg: error.message});
   }
 };

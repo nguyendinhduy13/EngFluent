@@ -1,13 +1,14 @@
 import { Colors } from "@assets/colors";
 import { TOPIC } from "@assets/index";
 import IconView from "@components/IconView";
+import { ScreenName } from "@routes/ScreenName";
 import React, { useState } from "react";
 import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SelectDropdown from "react-native-select-dropdown";
 import styles from "./styles";
 
-const Topic = () => {
+const Topic = ({ navigation }: any) => {
 
         const [defaultLevel, setDefaultLevel] = useState<number>(0);
 
@@ -19,6 +20,10 @@ const Topic = () => {
                 "Trình độ C1",
                 "Trình độ C2"
         ]
+
+        const goToTopicDetail = () => {
+                navigation.navigate(ScreenName.TopicDescription);
+        }
 
         return (
                 <View style={styles.container}>
@@ -70,7 +75,7 @@ const Topic = () => {
                                                         <TouchableOpacity
                                                                 style={styles.wrapTopic}
                                                                 activeOpacity={0.8}
-                                                        // onPress={goToTopicDetail}
+                                                                onPress={goToTopicDetail}
                                                         >
                                                                 <View style={styles.wrapContentTopic}>
                                                                         <Image
